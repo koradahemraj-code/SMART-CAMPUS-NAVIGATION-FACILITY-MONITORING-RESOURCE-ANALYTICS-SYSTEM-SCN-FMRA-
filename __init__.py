@@ -1,3 +1,4 @@
+#{
 import csv
 import os
 
@@ -27,6 +28,7 @@ def login():
     else:
         print("Invalid login!\n")
         return False
+
 
 def add_facility(data):
     fid = input("Facility ID: ")
@@ -59,7 +61,10 @@ def update_facility(data):
     data[fid].status = input("New Status: ")
     data[fid].usage = int(input("New Usage Count: "))
     print("Facility updated successfully")
+    # HemaRaj}
 
+    #-----
+    #{
 def delete_facility(data):
     fid = input("Enter Facility ID: ")
     if fid in data:
@@ -86,6 +91,11 @@ def search_by_name(data):
     if not found:
         print("Facility not found")
 
+
+# Laasya }
+
+# -----
+# {
 def usage_report(data):
     if not data:
         print("No facilities available")
@@ -111,6 +121,13 @@ def save_to_csv(data):
         for f in data.values():
             writer.writerow([f.fid, f.name, f.ftype, f.location, f.status, f.usage])
     print("Data saved to CSV.")
+
+      # Yashwanth}
+
+    #----
+
+    #{
+
 
 def load_from_csv(data):
     if not os.path.exists(FILENAME):
@@ -173,3 +190,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+  # Ravi Teja}
+  #-------------------------------------   End   ----------------------------------------------------------
